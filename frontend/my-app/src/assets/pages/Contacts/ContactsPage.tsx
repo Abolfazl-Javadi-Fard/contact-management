@@ -1,5 +1,5 @@
 
-import { useEffect, useMemo, useState , useRef , type FormEvent } from 'react';
+import { useEffect, useMemo, useState  , type FormEvent } from 'react';
 import './ContactsPage.css';
 import { getContacts, updateContact, deleteContact } from '../../../services/contactsApi';
 
@@ -43,13 +43,13 @@ function ContactsPage() {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
-  const [accountError, setAccountError] = useState('');
-  const [accountMessage, setAccountMessage] = useState('');
+  const [, setAccountError] = useState('');
+  const [, setAccountMessage] = useState('');
   // const [isAccountLoading, setIsAccountLoading] = useState(false);
   const [isPasswordLoading, setIsPasswordLoading] = useState(false);
   const [canChangePassword, setCanChangePassword] = useState(false);
   const [currentUser, setCurrentUser] = useState<UserAccount | null>(null);
-  const [isSidebarMenuOpen, setIsSidebarMenuOpen] = useState(false);
+  const [, setIsSidebarMenuOpen] = useState(false);
   const [isTopbarMenuOpen, setIsTopbarMenuOpen] = useState(false);
   // const profileMenuRef = useRef<HTMLDivElement>(null);
 
