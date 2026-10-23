@@ -11,7 +11,7 @@ def main():
 
     try:
         phone = input("شماره تلفن مدیر: ").strip()
-        email = input("ایمیل مدیر (در صورت نداشتن خالی بگذارید): ").strip()
+        email = input("ایمیل مدیر (اختیاری): ").strip() or None
         password = getpass("رمز عبور مدیر: ")
         confirm = getpass("تکرار رمز عبور: ")
 
@@ -33,12 +33,15 @@ def main():
         ).first()
 
         if existing:
-            print("این شماره تلفن یا ایمیل قبلاً ثبت شده است.")
+            print(
+                "این شماره تلفن یا ایمیل قبلاً ثبت شده است. "
+                "حساب موجود را بررسی کن."
+            )
             return
 
         admin = User(
             phone=phone,
-            email=email or None,
+            email=email,
             password_hash=hash_password(password),
             role="admin",
             is_active=True,
