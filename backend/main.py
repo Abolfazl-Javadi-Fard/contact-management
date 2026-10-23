@@ -14,6 +14,7 @@ from security import (
 )
 from database import Base, engine, get_db
 from models import Contact, User
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Contact Management API",
@@ -24,6 +25,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://contact-management-two-mocha.vercel.app",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ],
