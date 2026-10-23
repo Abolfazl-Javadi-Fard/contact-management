@@ -1,6 +1,5 @@
 
-const API_BASE_URL = "http://127.0.0.1:8000";
-
+const API_BASE_URL = "https://contact-management-3kkf.vercel.app";
 export interface LoginRequest {
   identifier: string;
   password: string;
